@@ -1,10 +1,12 @@
 def near_ten(num)
-  quotient = num % 10
-  if quotient  <= 2 || quotient >= 8
+  total = (num/100) + (num/10 % 10) + (num % 10)
+  remainder = total % 10
+  if remainder <= 2 || remainder >= 8
     puts "True"
-  else
-    puts "False"
+  elsif remainder <= 5
+    puts "10の倍数との差は#{remainder}です"
+  else 
+    puts "10の倍数との差は#{10 - remainder}です"
   end
 end
 
-near_ten(17)
